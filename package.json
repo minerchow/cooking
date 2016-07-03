@@ -1,0 +1,22 @@
+{
+  "name": "cooking-project",
+  "version": "0.0.0",
+  "description": "A vue project.",
+  "private": false,
+  "keywords": [],
+  "scripts": {
+    "dev": "cooking watch",
+    "dist": "cooking build -p",
+    "deploy": "cooking build --no-color",
+    "test": "cross-env TEST_ENV=true cooking build  -p"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "vue": "1.0.24"
+  },
+  "devDependencies": {
+    "cross-env": "^1.0.8",
+    "jquery": "2.1.4",
+    "underscore": "1.8.3"
+  }
+}
