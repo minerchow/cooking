@@ -12,7 +12,9 @@
   },
   "license": "ISC",
   "dependencies": {
+    "vue-router": "^0.7.13",
     "vue": "1.0.24"
+    
   },
   "devDependencies": {
     "cross-env": "^1.0.8",
