@@ -1,15 +1,30 @@
 # cooking-project
 > A vue project.
 
+## 安装
+npm install -g cooking
+
+进项目目录 npm install
+
+## 初始化项目
+cooking init vue
+
+
+
 ## Development
 
 ```shell
-make dev
+npm run dev
+```
+## test
+
+```shell
+npm run test
 ```
 
 ## Production
 ```
-make dist
+npm run dist
 ```
 
 ## License
