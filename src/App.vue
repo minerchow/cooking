@@ -6,7 +6,7 @@
   <p>cooking
 	<span class="name">aaa</span>
   </p>
-	父组件{{item}}{{num}}
+	父组件{{item}}{{counterValue}}
 	<!--<div><comp-a :item="item"></comp-a></div>-->
 	<!--<div><comp-b></comp-b></div>-->
 
@@ -19,30 +19,38 @@
 <script>
 	import CompA from './components/componentsA/componentsA.vue';
 	import CompB from './components/componentsB/componentsB.vue';
-
-  export default {
+	import store from './store/store';
+	import { getCount } from './store/getters'
+	export default {
 
     components: {
 		  CompA,
 		  CompB
     },
+	store: store,
 	data:function(){
 		return {
 			item:"props",
 			num:0
 		}
 	},
-	events:{
-		'coma-num':function(num){
-			this.num = num
-		},
-
-	},
-	 watch:{
-		'num':function(val,oldVal){
-			this.$broadcast('count-num',this.num)
+		vuex: {
+			getters: {
+				// 注意在这里你需要 `getCount` 函数本身而不是它的执行结果 'getCount()'
+				counterValue: getCount
+			}
 		}
-	 }
+//	events:{
+//		'coma-num':function(num){
+//			this.num = num
+//		},
+//
+//	}
+//	 watch:{
+//		'num':function(val,oldVal){
+//			this.$broadcast('count-num',this.num)
+//		}
+//	 }
   };
 </script>
 <style lang="scss" scoped>

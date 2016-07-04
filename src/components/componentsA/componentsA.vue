@@ -2,9 +2,10 @@
 	<div>这是组件A</div>
 	<div>继承父组件{{item}}</div>
 	<div>使用了过滤器 {{3 | add 1 5}}</div>
-	<button v-on:click="count()">点击+1</button>
+	<button v-on:click="increment()">点击+1</button>
 </template>
 <script>
+	import { incrementCounter } from '../../store/actions'
 	export default {
 		data:function(){
 			return {
@@ -14,11 +15,16 @@
 		props:{
 			item:['item']
 		},
-		methods:{
-			count:function(){
-				this.num = this.num +1;
-				this.$dispatch('coma-num',this.num)
+		vuex: {
+			actions: {
+				increment: incrementCounter
 			}
 		}
+//		methods:{
+//			count:function(){
+//				this.num = this.num +1;
+//				this.$dispatch('coma-num',this.num)
+//			}
+//		}
 	}
 </script>
