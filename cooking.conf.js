@@ -6,6 +6,7 @@ var cooking = require('cooking');
       app: './src/main.js',
       activity: './src/pages/activity/main.js',
       static:'./src/pages/static/main.js',
+      vux:'./src/pages/vux/main.js',
       vendor: ['vue', 'vue-router', 'jquery', 'underscore'],
       common: ['./src/common/common.js', './src/common/common.scss',"./src/bootstrap/css/bootstrap.css"],
     },
@@ -19,6 +20,11 @@ var cooking = require('cooking');
         filename: "activity.html",
         template: './src/pages/activity/activity.tpl',
         chunks: ['vendor', 'common', 'activity']
+      },
+      {
+        filename: "vux.html",
+        template: './src/pages/vux/vux.tpl',
+        chunks: ['vendor', 'common', 'vux']
       },
       {
         filename: "static.html",
