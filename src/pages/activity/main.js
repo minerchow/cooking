@@ -11,7 +11,8 @@ new Vue({ // eslint-disable-line
   ready:function(){
     $.ajax({
       method:'GET',
-      url:'/Api/Car/GetBaners'
+      url:'/Api/Car/GetBaners',
+      dataType:"json"
     }).done(function(data){
       console.log(data)
     })

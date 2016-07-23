@@ -27,7 +27,7 @@
 		  CompA,
 		  CompB
     },
-	store: store,
+	store: store,// 在根组件加入 store，让它的子组件和 store 连接
 	data:function(){
 		return {
 			item:"props",

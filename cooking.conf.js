@@ -39,8 +39,8 @@ var cooking = require('cooking');
       hostname: 'localhost',
       publicPath:"/",
       proxy: {
-        '/Api/*': {
-          target: 'http://m.huizuche.com',
+        '*': {
+          target: 'http://m.huizuche.com/',
           secure: false
         }
       }
