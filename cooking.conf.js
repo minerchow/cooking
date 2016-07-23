@@ -37,7 +37,13 @@ var cooking = require('cooking');
     devServer: {
       port: 8080,
       hostname: 'localhost',
-      publicPath:"/"
+      publicPath:"/",
+      proxy: {
+        '/Api/*': {
+          target: 'http://m.huizuche.com',
+          secure: false
+        }
+      }
     },
 
     // production

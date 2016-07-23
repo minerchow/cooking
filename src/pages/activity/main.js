@@ -3,9 +3,17 @@
  */
 import Vue from 'vue';
 import Activity from './activityApp';
-
+import $ from 'jquery';
 
 new Vue({ // eslint-disable-line
   el: 'body',
-  components: { Activity}
+  components: { Activity},
+  ready:function(){
+    $.ajax({
+      method:'GET',
+      url:'/Api/Car/GetBaners'
+    }).done(function(data){
+      console.log(data)
+    })
+  }
 });
