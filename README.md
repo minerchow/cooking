@@ -6,8 +6,7 @@ npm install -g cooking
 
 进项目目录 npm install
 
-## 初始化项目
-cooking init vue
+
 
 
 

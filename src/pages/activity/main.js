@@ -10,7 +10,7 @@ new Vue({ // eslint-disable-line
   components: { Activity},
   ready:function(){
     $.ajax({
-      method:'GET',
+      method:'POST',
       url:'/Api/Car/GetBaners',
       dataType:"json"
     }).done(function(data){
