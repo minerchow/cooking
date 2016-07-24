@@ -13,7 +13,7 @@
 			}
 		},
 		props:{
-			item:['item']
+			item:['']
 		},
 		vuex: {
 			actions: {

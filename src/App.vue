@@ -12,7 +12,7 @@
 
 	<a external v-link="{name:'a',activeClass: 'active'}">link a</a>
 	<a external v-link="{name:'b',activeClass: 'active'}">link b</a>
-	<router-view></router-view>
+	<router-view :item="items"></router-view>
   </div>
 </template>
 
@@ -30,7 +30,7 @@
 	store: store,// 在根组件加入 store，让它的子组件和 store 连接
 	data:function(){
 		return {
-			item:"props",
+			items:"props",
 			num:0
 		}
 	},
