@@ -7,10 +7,10 @@ var cooking = require('cooking');
       activity: './src/pages/activity/main.js',
       static:'./src/pages/static/main.js',
       vux:'./src/pages/vux/main.js',
-      vendor: ['vue', 'vue-router', 'jquery', 'underscore'],
+      vendor: ['vue', 'vue-router', 'vuex','jquery', 'underscore'],
       common: ['./src/common/common.js', './src/common/common.scss',"./src/bootstrap/css/bootstrap.css"],
     },
-    dist: 'd://phpStudy/WWW/work/fisDemo/m/dist/',
+    dist: 'd://phpStudy/WWW/work/fisDemo/dist/',
     template: [{
       filename: "index.html",
       template: './src/index.tpl',
@@ -53,10 +53,11 @@ var cooking = require('cooking');
     chunk: [
       {
         'name': 'vendor',
-        'chunks': ['vendor', 'app', 'common', 'activity']
+        'chunks': ['vendor','common','app', 'activity','vux']
       }
     ],
-    publicPath: process.env.TEST_ENV ?'http://test.cdn.com/dist/':'http://cdn.com/dist/',
+
+    publicPath: process.env.TEST_ENV ?'/dist/':'http://cdn.com/dist/',
     assetsPath: 'statics',
     urlLoaderLimit: 10000,
     extractCSS: '[name].[contenthash:7].css',
@@ -66,10 +67,8 @@ var cooking = require('cooking');
   cooking.add('resolve.alias', {
     'src': path.join(__dirname, 'src')
   });
-  cooking.add('loader.es6', {
-    test: /src\.js$/,
-    loaders: ['babel-loader']
-  });
+
+
 
 console.log(process.env.TEST_ENV)
 

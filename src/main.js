@@ -18,14 +18,17 @@ var router = new VueRouter({
 router.map({
   "/a":{
     name:"a",
-    component:require('./components/componentsA/componentsA.vue')
+    //component:require('./components/componentsA/componentsA.vue')
+    component:function(resolve){
+      require(['./components/componentsA/componentsA.vue'], resolve)
+    }
   },
   "/b":{
     name:"b",
-    //component:function(resolve){
-    //  require(['./components/componentsB/componentsB.vue'], resolve)
-    //}
-    component:require('./components/componentsB/componentsB.vue')
+    component:function(resolve){
+      require(['./components/componentsB/componentsB.vue'], resolve)
+    }
+    //component:require('./components/componentsB/componentsB.vue')
   }
 })
 
