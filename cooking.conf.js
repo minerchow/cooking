@@ -68,6 +68,7 @@ var cooking = require('cooking');
     'src': path.join(__dirname, 'src')
   });
 
+  cooking.add('output.chunkFilename','chunks/[name]-[chunkhash:8].js');
 
 
 console.log(process.env.TEST_ENV)
