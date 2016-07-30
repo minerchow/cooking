@@ -17,16 +17,12 @@
 </template>
 
 <script>
-	import CompA from './components/componentsA/componentsA.vue';
-	import CompB from './components/componentsB/componentsB.vue';
+
 	import store from './store/store';
 	import { getCount } from './store/getters'
 	export default {
 
-    components: {
-		  CompA,
-		  CompB
-    },
+
 	store: store,// 在根组件加入 store，让它的子组件和 store 连接
 	data:function(){
 		return {

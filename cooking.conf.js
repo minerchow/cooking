@@ -67,7 +67,10 @@ var cooking = require('cooking');
   cooking.add('resolve.alias', {
     'src': path.join(__dirname, 'src')
   });
-
+  cooking.add('bundle.loader',{
+    test:/\.vue$/,
+    loaders:['bundle-loader']
+  })
   cooking.add('output.chunkFilename','chunks/[name]-[chunkhash:8].js');
 
 
