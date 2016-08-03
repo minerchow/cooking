@@ -7,7 +7,7 @@ var cooking = require('cooking');
       activity: './src/pages/activity/main.js',
       static:'./src/pages/static/main.js',
       vux:'./src/pages/vux/main.js',
-      vendor: ['vue', 'vue-router', 'vuex','jquery', 'underscore'],
+      vendor: ['vue', 'vue-router', 'vuex', 'vue-resource','underscore'],
       common: ['./src/common/common.js', './src/common/common.scss',"./src/bootstrap/css/bootstrap.css"],
     },
     dist: 'd://phpStudy/WWW/work/fisDemo/dist/',
