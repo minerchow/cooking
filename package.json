@@ -8,7 +8,8 @@
     "dev": "cooking watch",
     "dist": "cooking build -p",
     "deploy": "cooking build --no-color",
-    "test": "cross-env TEST_ENV=true cooking build  -p"
+    "test": "cross-env TEST_ENV='test' cooking build  -p",
+    "outertest":"cross-env TEST_ENV='outertest' cooking build  -p"
   },
   "license": "ISC",
   "dependencies": {

@@ -57,11 +57,12 @@ var cooking = require('cooking');
       }
     ],
 
-    publicPath: process.env.TEST_ENV ?'/dist/':'http://cdn.com/dist/',
+    publicPath: toPath(),
     assetsPath: 'statics',
     urlLoaderLimit: 10000,
     extractCSS: '[name].[contenthash:7].css',
-    extends: ['vue', 'sass']
+    extends: ['vue', 'sass'],
+    devtool: 'source-map'
   });
 
   cooking.add('resolve.alias', {
@@ -71,11 +72,24 @@ var cooking = require('cooking');
     test:/\.vue$/,
     loaders:['bundle-loader']
   })
+  //此配置是为了配合vue-router 动态加载组件
   cooking.add('output.chunkFilename','chunks/[name]-[chunkhash:8].js');
 
 
-console.log(process.env.TEST_ENV)
-
+console.log(process.env.TEST_ENV);
+//通过一个公用方法来辨别是内测，外测还是生产环境
+function toPath(){
+  //return process.env.TEST_ENV=='test' ?'/dist/':'http://cdn.com/dist/'
+  if(process.env.TEST_ENV=='test'){
+    return 'http://test.cdn.com/dist/'
+  }
+  else if(process.env.TEST_ENV=='outertest'){
+    return 'http://outertest.cdn.com/dist/'
+  }
+  else{
+    return 'http://cdn.com/dist/'
+  }
+}
 
 
 module.exports = cooking.resolve();
