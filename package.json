@@ -17,7 +17,7 @@
     "vue-resource": "^0.9.3",
     "vue-router": "^0.7.13",
     "vuex": "^1.0.0-rc",
-    "vux": "^0.1.1"
+    "vux": "0.1.2"
   },
   "devDependencies": {
     "cross-env": "^1.0.8",

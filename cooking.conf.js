@@ -72,11 +72,10 @@ var cooking = require('cooking');
     test:/\.vue$/,
     loaders:['bundle-loader']
   })
+
   //此配置是为了配合vue-router 动态加载组件
   cooking.add('output.chunkFilename','chunks/[name]-[chunkhash:8].js');
-
-
-console.log(process.env.TEST_ENV);
+  console.log(process.env.TEST_ENV);
 //通过一个公用方法来辨别是内测，外测还是生产环境
 function toPath(){
   //return process.env.TEST_ENV=='test' ?'/dist/':'http://cdn.com/dist/'

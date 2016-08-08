@@ -31,5 +31,8 @@
     }
 </script>
 <style>
-    @import '~vux/dist/vux.css';
+    @import '~vux/dist/components/group/style.css';
+    @import '~vux/dist/components/cell/style.css';
+    @import '~vux/dist/components/switch/style.css';
+    @import '~vux/dist/components/alert/style.css';
 </style>
