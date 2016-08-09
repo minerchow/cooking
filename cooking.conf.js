@@ -54,9 +54,9 @@ var cooking = require('cooking');
       {
         'name': 'vendor',
         'filename': 'vendor.js',
-        'chunks': ['vendor','app', 'activity','vux']
+         'minChunks': 'Infinity',
+          'chunks': ['vendor','app', 'activity','vux']
       }
-
     ],
 
     publicPath: toPath(),
