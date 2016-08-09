@@ -2,12 +2,15 @@ import Vue from 'vue';
 import App from './App';
 
 import VueRouter from 'vue-router'
-
+import Common from './common/common.js'
 var filter = require('./filter/filter');
 
 new Vue({ // eslint-disable-line
   el: 'body',
-  components: { App }
+  components: { App },
+  ready:function(){
+    Common.init()
+  }
 });
 
 //路由

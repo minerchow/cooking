@@ -1,8 +1,9 @@
 /**
  * Created by Administrator on 2016/8/8.
  */
-export default {
+//webview
+var hzcWebview = {
     init:function(){
-        console.log("公共方法")
+        console.log("webview")
     }
 }

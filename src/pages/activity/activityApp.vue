@@ -37,6 +37,7 @@
 	import radio from 'src/vue-strap/src/radioBtn.vue'
 	import checkboxGroup from 'src/vue-strap/src/checkboxGroup.vue'
 	import checkbox from 'src/vue-strap/src/checkboxBtn.vue'
+
 	export default {
 		components: {
 			radio,
@@ -50,6 +51,9 @@
 				checkboxValue: [],
 				radioValue: ''
 			}
+		},
+		ready:function(){
+
 		}
 	}
 </script>

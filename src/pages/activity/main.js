@@ -2,8 +2,9 @@
  * Created by Administrator on 2016/6/10.
  */
 import Vue from 'vue';
-import Activity from './activityApp';
 import VueResource  from 'vue-resource';
+import Common from '../../common/common.js'
+import Activity from './activityApp';
 Vue.use(VueResource);
 new Vue({ // eslint-disable-line
   el: 'body',
@@ -16,10 +17,12 @@ new Vue({ // eslint-disable-line
     //}).done(function(data){
     //  console.log(data)
     //})
+     Common.init()
     this.getData();
   },
   methods:{
     getData:function(){
+
       this.$http.post('/Api/Car/GetBaners',{}).then(function(response){
         // 响应成功回调
         console.log(response)

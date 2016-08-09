@@ -7,24 +7,24 @@ var cooking = require('cooking');
       activity: './src/pages/activity/main.js',
       static:'./src/pages/static/main.js',
       vux:'./src/pages/vux/main.js',
-      vendor: ['vue', 'vue-router', 'vuex', 'vue-resource','underscore'],
-      common: ['./src/common/common.js', './src/common/common.scss',"./src/bootstrap/css/bootstrap.css"],
+      vendor: ['vue', 'vue-router', 'vuex', 'vue-resource','underscore','./src/common/common.js','./src/common/common.scss',"./src/bootstrap/css/bootstrap.css"],
+
     },
     dist: 'd://phpStudy/WWW/work/fisDemo/dist/',
     template: [{
       filename: "index.html",
       template: './src/index.tpl',
-      chunks: ['vendor', 'common', 'app']
+      chunks: ['vendor','app']
     },
       {
         filename: "activity.html",
         template: './src/pages/activity/activity.tpl',
-        chunks: ['vendor', 'common', 'activity']
+        chunks: ['vendor','activity']
       },
       {
         filename: "vux.html",
         template: './src/pages/vux/vux.tpl',
-        chunks: ['vendor', 'common', 'vux']
+        chunks: ['vendor','vux']
       },
       {
         filename: "static.html",
@@ -53,8 +53,10 @@ var cooking = require('cooking');
     chunk: [
       {
         'name': 'vendor',
-        'chunks': ['vendor','common','app', 'activity','vux']
+        'filename': 'vendor.js',
+        'chunks': ['vendor','app', 'activity','vux']
       }
+
     ],
 
     publicPath: toPath(),
