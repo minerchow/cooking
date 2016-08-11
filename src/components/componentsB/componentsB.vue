@@ -1,8 +1,10 @@
 <template>
+	<div>
 	<div>这是组件B </div>
 	<div>这是通过组件a +1方法传过来的数据 {{counterValue}}</div>
 	<img src="../../assets/a.jpg"/>
 	<img src="../../icon/list-2.png"/>
+	</div>
 </template>
 <script>
 	import { getCount } from '../../store/getters'

@@ -12,7 +12,7 @@
 
 	<a external v-link="{name:'a',activeClass: 'active'}">link a</a>
 	<a external v-link="{name:'b',activeClass: 'active'}">link b</a>
-	<router-view :item="items"></router-view>
+	<router-view transition="expand" :item="items"></router-view>
   </div>
 </template>
 
@@ -57,5 +57,25 @@
 		.name{
 			color: #ff0000;
 		}
+	}
+
+	.active{
+		color:#ff0000;
+	}
+	/* 必需 */
+	.expand-transition {
+		transition: all .3s ease;
+		height: auto;
+		padding: 10px;
+		background-color: #eee;
+		overflow: hidden;
+	}
+
+	/* .expand-enter 定义进入的开始状态 */
+	/* .expand-leave 定义离开的结束状态 */
+	.expand-enter, .expand-leave {
+		height: 0;
+		padding: 0 10px;
+		opacity: 0;
 	}
 </style>
