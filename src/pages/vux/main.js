@@ -1,5 +1,5 @@
 
-import Vue from 'vue';
+//import Vue from 'vue';
 import VuxEl from './vux';
 
 

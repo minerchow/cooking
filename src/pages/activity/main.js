@@ -1,11 +1,11 @@
 /**
  * Created by Administrator on 2016/6/10.
  */
-import Vue from 'vue';
-import VueResource  from 'vue-resource';
+//import Vue from 'vue';
+//import VueResource  from 'vue-resource';
 import Common from '../../common/common.js'
 import Activity from './activityApp';
-Vue.use(VueResource);
+//Vue.use(VueResource);
 new Vue({ // eslint-disable-line
   el: 'body',
   components: { Activity},

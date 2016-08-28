@@ -7,24 +7,24 @@ var cooking = require('cooking');
       activity: './src/pages/activity/main.js',
       static:'./src/pages/static/main.js',
       vux:'./src/pages/vux/main.js',
-      vendor: ['vue', 'vue-router', 'vuex', 'vue-resource','underscore','./src/common/common.js','./src/common/common.scss',"./src/bootstrap/css/bootstrap.css"],
+      common: ['./src/common/common.js','./src/common/common.scss',"./src/bootstrap/css/bootstrap.css"],
 
     },
     dist: 'd://phpStudy/WWW/work/fisDemo/dist/',
     template: [{
       filename: "index.html",
       template: './src/index.tpl',
-      chunks: ['vendor','app']
+      chunks: ['common','app']
     },
       {
         filename: "activity.html",
         template: './src/pages/activity/activity.tpl',
-        chunks: ['vendor','activity']
+        chunks: ['common','activity']
       },
       {
         filename: "vux.html",
         template: './src/pages/vux/vux.tpl',
-        chunks: ['vendor','vux']
+        chunks: ['common','vux']
       },
       {
         filename: "static.html",
@@ -52,10 +52,10 @@ var cooking = require('cooking');
     sourceMap: false,
     chunk: [
       {
-        'name': 'vendor',
-        'filename': 'vendor.js',
+        'name': 'common',
+        'filename': 'common.js',
          'minChunks': 'Infinity',
-          'chunks': ['vendor','app', 'activity','vux']
+          'chunks': ['common','app', 'activity','vux']
       }
     ],
 
@@ -82,7 +82,7 @@ var cooking = require('cooking');
 function toPath(){
   //return process.env.TEST_ENV=='test' ?'/dist/':'http://cdn.com/dist/'
   if(process.env.TEST_ENV=='test'){
-    return 'http://test.cdn.com/dist/'
+    return '/dist/'
   }
   else if(process.env.TEST_ENV=='outertest'){
     return 'http://outertest.cdn.com/dist/'

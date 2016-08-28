@@ -1,19 +1,19 @@
 <template>
 
-  <div id="app">
+
   <h1>cooking</h1>
   <a href="activity.html">跳到activity页面</a>
   <p>cooking
 	<span class="name">aaa</span>
   </p>
 	父组件{{item}}{{counterValue}}
-	<!--<div><comp-a :item="item"></comp-a></div>-->
-	<!--<div><comp-b></comp-b></div>-->
+	<div><comp-a :item="item"></comp-a></div>
+	<div><comp-b></comp-b></div>
 
 	<a external v-link="{name:'a',activeClass: 'active'}">link a</a>
 	<a external v-link="{name:'b',activeClass: 'active'}">link b</a>
 	<router-view transition="expand" :item="items"></router-view>
-  </div>
+
 </template>
 
 <script>
