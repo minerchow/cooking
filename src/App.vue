@@ -11,7 +11,7 @@
 	<div><comp-b></comp-b></div>
 
 	<a external v-link="{name:'a',activeClass: 'active'}">link a</a>
-	<a external v-link="{name:'b',activeClass: 'active'}">link b</a>
+	<a external v-link="{name:'b',params:{id:2,pid:3},activeClass: 'active'}">link b</a>
 	<router-view transition="expand" :item="items"></router-view>
 
 </template>
@@ -30,6 +30,7 @@
 			num:0
 		}
 	},
+
 	vuex: {
 			getters: {
 				// 注意在这里你需要 `getCount` 函数本身而不是它的执行结果 'getCount()'

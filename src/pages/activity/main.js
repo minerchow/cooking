@@ -23,7 +23,7 @@ new Vue({ // eslint-disable-line
   methods:{
     getData:function(){
 
-      this.$http.post('/Api/Car/GetBaners',{}).then(function(response){
+      this.$http.get('/thinkphp-demo/index.php/Admin/Admin/showAJAX',{}).then(function(response){
         // 响应成功回调
         console.log(response)
       }, function(response){

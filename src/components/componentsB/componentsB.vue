@@ -4,6 +4,7 @@
 	<div>这是通过组件a +1方法传过来的数据 {{counterValue}}</div>
 	<img src="../../assets/a.jpg"/>
 	<img src="../../icon/list-2.png"/>
+	params:{{$route.params.id}}
 	</div>
 </template>
 <script>
@@ -13,6 +14,10 @@
 			return {
 				num :0
 			}
+		},
+		ready:function(){
+			console.log(this.$route.params.id);
+			console.log(this.$route.params.pid)
 		},
 //		events: {
 //			'count-num': function (num) {

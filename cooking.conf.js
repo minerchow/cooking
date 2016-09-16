@@ -7,6 +7,7 @@ var cooking = require('cooking');
       activity: './src/pages/activity/main.js',
       static:'./src/pages/static/main.js',
       vux:'./src/pages/vux/main.js',
+      login:"./src/pages/login/main.js",
       common: ['./src/common/common.js','./src/common/common.scss',"./src/bootstrap/css/bootstrap.css"],
 
     },
@@ -20,6 +21,11 @@ var cooking = require('cooking');
         filename: "activity.html",
         template: './src/pages/activity/activity.tpl',
         chunks: ['common','activity']
+      },
+      {
+        filename: "login.html",
+        template: './src/pages/login/login.tpl',
+        chunks: ['common','login']
       },
       {
         filename: "vux.html",
@@ -40,7 +46,7 @@ var cooking = require('cooking');
       publicPath:"/",
       proxy: {
         '*': {
-          target: 'http://m.huizuche.com/',
+          target: 'http://127.0.0.1/',
           secure: false
         }
       }
