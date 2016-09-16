@@ -1,6 +1,7 @@
 <template>
+	<user :name="loginUserName"></user>
 	这是{{name}}
-	<div>用户名：{{userName}}</div>
+
 	<div class="bs-docs-section" id="buttons">
 		<h1 class="page-header"><a href="#buttons" class="anchor">Buttons</a></h1>
 		<div class="bs-example">
@@ -38,27 +39,36 @@
 	import radio from 'src/vue-strap/src/radioBtn.vue'
 	import checkboxGroup from 'src/vue-strap/src/checkboxGroup.vue'
 	import checkbox from 'src/vue-strap/src/checkboxBtn.vue'
-	import cookie from 'cookie_js'
+	import User from '../../components/user/user'
+	import Common from '../../common/common.js'
 	export default {
 		components: {
 			radio,
 			radioGroup,
 			checkboxGroup,
-			checkbox
+			checkbox,
+			User
 		},
+
 		data:function(){
 			return {
 				"name":"活动页",
 				checkboxValue: [],
 				radioValue: '',
-				userName:""
+				loginUserName:""
+
 			}
 		},
+
 		ready:function(){
-			if(!cookie.get('login')){
-				window.location.href="/login.html"
+			var that = this;
+			//是否需要验证登陆，并且有用户名的话拿到用户名,传递到user组件中
+			Common.checkLogin();
+			if(Common.loginStatus){
+				that.loginUserName = Common.username
 			}
-			this.userName = cookie.get('login');
+
 		}
+
 	}
 </script>

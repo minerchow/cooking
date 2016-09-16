@@ -5,6 +5,7 @@
 //import VueResource  from 'vue-resource';
 import Common from '../../common/common.js'
 import Activity from './activityApp';
+
 //Vue.use(VueResource);
 new Vue({ // eslint-disable-line
   el: 'body',
@@ -17,7 +18,8 @@ new Vue({ // eslint-disable-line
     //}).done(function(data){
     //  console.log(data)
     //})
-     Common.init()
+    Common.init();
+
     this.getData();
   },
   methods:{
@@ -29,6 +31,10 @@ new Vue({ // eslint-disable-line
       }, function(response){
         // 响应错误回调
       });
+    },
+    ready:function(){
+
+
     }
   }
 });

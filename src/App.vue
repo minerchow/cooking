@@ -7,8 +7,8 @@
 	<span class="name">aaa</span>
   </p>
 	父组件{{item}}{{counterValue}}
-	<div><comp-a :item="item"></comp-a></div>
-	<div><comp-b></comp-b></div>
+	<!--<div><comp-a :item="item"></comp-a></div>-->
+	<!--<div><comp-b></comp-b></div>-->
 
 	<a external v-link="{name:'a',activeClass: 'active'}">link a</a>
 	<a external v-link="{name:'b',params:{id:2,pid:3},activeClass: 'active'}">link b</a>
